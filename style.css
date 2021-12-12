@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;900&display=swap');
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 4vmin;
+}
+
+@media (min-width:680px) {
+    html {
+        font-size: 2vmin;
+    }
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    background-color: #000;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+/* Background Video */
+.bgVideo {
+    position: fixed;
+    top: -20%;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+@media (min-width:680px) {
+ .bgVideo {
+     top:0;
+     width: 80%;
+     right: -20%;
+ }   
+}
+
+/* Contents */
+.container {
+    width: min(90%,600px);
+    min-height: 400px;
+    margin: 0 auto;
+    background: rgba(255 255 255 / 20%);
+    padding: 2.5rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px 5px rgba(255 255 255 / 20%);
+}
+
+@media (min-width:680px) {
+    .container {
+        background: rgba(255 255 255 / 40%);
+    }
+}
+
+.heading {
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+@media (min-width:680px) {
+    .heading {
+        font-size: 2rem;
+    }
+}
+
+/* Form Styles */
+fieldset {
+    position: relative;
+    border: none;
+    outline: none;
+    padding: 1.5rem 0;
+}
+
+fieldset label {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+form input {
+    border: none;
+    outline: none;
+    width: 100%;
+    border-radius: 5px;
+    padding: .8rem 10px;
+    color: #333;
+    letter-spacing: 1.5px;
+    font-family: inherit;
+    font-weight: 400;
+}
+
+.submit-btn {
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 1rem;
+    background-color: rgb(252, 163, 31);
+    color: #fff;
+    width: 100%;
+    cursor: pointer;
+    display: inline-block;
+    padding: .8rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+
+/* Timer Section */
+.timer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.timer__title {
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+}
+
+.timer__tab {
+    font-size: 1.5rem;
+}
