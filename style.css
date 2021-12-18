@@ -31,7 +31,7 @@ body {
 }
 
 
-/* Background Video */
+/* Video Background */
 .bgVideo {
     position: fixed;
     top: -20%;
@@ -52,7 +52,7 @@ body {
 /* Contents */
 .container {
     width: min(90%,600px);
-    min-height: 400px;
+    min-height: 300px;
     margin: 0 auto;
     background: rgba(255 255 255 / 20%);
     padding: 2.5rem 1.5rem;
@@ -80,20 +80,12 @@ body {
 }
 
 /* Form Styles */
-fieldset {
-    position: relative;
-    border: none;
-    outline: none;
-    padding: 1.5rem 0;
+.form-page form label {
+    display: inline-block;
+    margin-top:1rem;
 }
 
-fieldset label {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-form input {
+.form-page form input {
     border: none;
     outline: none;
     width: 100%;
@@ -105,7 +97,13 @@ form input {
     font-weight: 400;
 }
 
-.submit-btn {
+#submit {
+    margin-top: 2rem;
+}
+
+/* Buttons */
+
+.btn {
     font-family: inherit;
     font-weight: 700;
     font-size: 1rem;
@@ -120,6 +118,9 @@ form input {
     border-radius: 5px;
 }
 
+.reset-btn {
+    margin-top: 4rem;
+}
 
 /* Timer Section */
 .timer {
@@ -127,11 +128,10 @@ form input {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 3rem;
 }
 
 .timer__title {
-    font-size: 2.5rem;
+    font-size: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -141,5 +141,38 @@ form input {
 }
 
 .timer__tab {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+}
+
+
+/* Congrats Page */
+.congrat-page__desc{
+    text-align: center;
+}
+
+.congrat-page .heading {
+    animation: flow 3s ease-in-out infinite;
+}
+
+@keyframes flow {
+    0% {
+        color: red;
+    }
+
+    25% {
+        color: orange;
+    }
+
+    50% {
+        color: yellow;
+        transform: scale(1.1);
+    }
+
+    75% {
+        color: green;
+    }
+
+    100% {
+        color: #fff;
+    }
 }

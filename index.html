@@ -8,31 +8,49 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Video Background -->
     <video autoplay muted loop class="bgVideo">
         <source src="./assets/video/clock-background.mp4" type="video/mp4">
       </video>
+
+      <!-- Pages -->
     <div class="container">
+        <!-- Form input page -->
         <div class="form-page">
             <h1 class="heading">Create a Custom Countdown!</h1>
-            <form action="javascript:void(0)">
-                <fieldset>
-                    <label for="title">Title</label>
-                    <input type="text" name="title" id="title" placeholder="Select a Title For Your Countdown" required>
-                </fieldset>
-    
-                <fieldset>
-                    <label for="date">Select a Date</label>
-                    <input type="date" name="date" id="date" required>
-                </fieldset>
-    
-                <button class="submit-btn" id="submit">Submit</button>
+            <form action="" id="inputForm">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" placeholder="Select a Title For Your Countdown" required> 
+            
+                <label for="date">Select a Date</label>
+                <input type="date" name="date" id="date" required>
+
+                <button type="submit" class="submit-btn btn" id="submit">Submit</button>
             </form>
         </div> <!--End of Form Page-->
+
+        <!-- Timer Page -->
         <div class="timer-page" hidden>
-            <h1 class="heading">Happy Birthday</h1>
-            <div class="timer"></div>
-            <button class="submit-btn" id="reset">Reset</button>
+            <h1 class="heading" id="timerTitle"></h1>
+            <div class="timer">
+                <div class="timer__title day"><span class="timer__tab">2</span>Days</div>
+                <div class="timer__title hour"><span class="timer__tab">12</span>Hours</div>
+                <div class="timer__title minute"><span class="timer__tab">60</span>Minutes</div>
+                <div class="timer__title second"><span class="timer__tab">60</span>Seconds</div>    
+            </div>
+            <button class="reset-btn btn" id="reset">Reset</button>
         </div> <!--End of Timer Page-->
+
+        <!-- End of Timer Page -->
+        <div class="congrat-page" hidden>
+            <h1 class="heading">Countdown Complete!</h1>
+            <div class="congrat-page__desc">
+               <h2 class="congrat-title"></h2>   
+            </div>
+            <button class="renew-btn btn" id="renew">Make Another Countdown</button>
+        </div> <!--End of Timer Page-->
+
+
     </div> <!-- End of Container-->
 
     <script src="script.js"></script>
