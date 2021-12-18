@@ -9,6 +9,7 @@ let inputTitle = '';
 let inputDate = '';
 let dateTime = Date;
 let countdownInterval;
+let savedPreviousData;
 
 // Time calculation constants
 const second = 1000;
@@ -45,9 +46,11 @@ const getFormData = (e) => {
      dateTime = new Date(inputDate).getTime();
 
     //  Storing Title and Date in local storage
-     localStorage.setItem("countdownTitle", inputTitle);
-     localStorage.setItem("countdownDate", inputDate);
-     localStorage.setItem("dateTime", dateTime);
+    savedPreviousData = {
+        title : inputTitle,
+        date : inputDate
+    };
+    localStorage.setItem("countdown", JSON.stringify(savedPreviousData));
 
      updateDOM();
 }
@@ -121,19 +124,24 @@ const resetForm = () => {
 
 }
 
+// retrieving data from local storage, if the countdown object is set
+const readLocalstorageData = () => {
+    // Check the availability of the coundtown objects
+    if(localStorage.getItem('countdown')) {
 
-if(window.localStorage) {
-    // Reading data from the local storage
-    inputTitle = localStorage.getItem("countdownTitle");
-    inputDate = localStorage.getItem("countdownDate");
-    dateTime = localStorage.getItem("dateTime");
+        inputTitle = JSON.parse(localStorage.getItem('countdown')).title;
+        inputDate = JSON.parse(localStorage.getItem('countdown')).date;
+        dateTime = new Date(inputDate).getTime();
 
-    // Running show timer function based on the data stored in the local storage
-    updateDOM();
-}
+        updateDOM();
+    }
+} 
 
 
 // Event Listeners
 inputForm.addEventListener('submit',getFormData);
 resetBtn.addEventListener('click',resetForm);
 renewBtn.addEventListener('click',resetForm);
+
+// Run function to get data from the local storage
+readLocalstorageData();
